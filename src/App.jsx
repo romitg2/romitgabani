@@ -3,6 +3,7 @@ import Available from "./Components/Available";
 import Greetings from "./Components/Greetings";
 import LoadingProgress from "./Components/LoadingProgress";
 import Logo from "./Components/Logo";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <div className="w-full fixed bottom-0 justify-center flex ">
         <div className="bg-green-600 rounded-full w-[50vw] h-1"></div>
       </div>
+      <NavBar />
     </>
   );
 }
