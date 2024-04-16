@@ -1,5 +1,6 @@
 import "./App.css";
 import Available from "./Components/Available";
+import { Blank } from "./Components/Blank";
 import Greetings from "./Components/Greetings";
 import LoadingProgress from "./Components/LoadingProgress";
 import Logo from "./Components/Logo";
@@ -8,7 +9,7 @@ import NavBar from "./Components/NavBar";
 function App() {
   return (
     <>
-      <div className="">
+      <div className="h-[100vh]">
         <Logo />
         <Available />
         <Greetings duration={100} spread={5} />
@@ -25,6 +26,7 @@ function App() {
         <div className="bg-green-600 rounded-full w-[50vw] h-1"></div>
       </div>
       <NavBar />
+      <Blank />
     </>
   );
 }
