@@ -1,14 +1,18 @@
+/* eslint-disable react/prop-types */
 import {
   motion,
+  progress,
   useMotionTemplate,
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { MdOutlineArrowUpward } from "react-icons/md";
 
-const LoadingProgress = () => {
+const LoadingProgress = (props) => {
+  const progress = props.progress;
+  const visible = props.visible;
+
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -42,10 +46,13 @@ const LoadingProgress = () => {
   };
 
   let loaded = true;
-  const [progress, setProgress] = useState("21");
 
   return (
-    <div className="fixed top-[50vh] left-[50vw] translate-x-[-50%] ">
+    <div
+      className={`fixed ${
+        visible ? "" : "hidden"
+      } top-[50vh] left-[50vw] translate-x-[-50%] `}
+    >
       <motion.button
         ref={ref}
         onMouseMove={handleMouseMove}
